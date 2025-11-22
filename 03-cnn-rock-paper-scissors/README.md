@@ -1,74 +1,77 @@
-📘 Rock–Paper–Scissors Image Classification (CNN, TensorFlow)
+# 📘 Rock–Paper–Scissors Image Classification (CNN, TensorFlow)
 
-This project implements a Convolutional Neural Network (CNN) that classifies hand gesture images into Rock, Paper, or Scissors.
-It demonstrates a full deep-learning workflow including:
+This project implements a **Convolutional Neural Network (CNN)** that classifies hand gesture images into **Rock, Paper, or Scissors**.  
+It demonstrates a complete deep-learning workflow including:
 
-Image preprocessing & augmentation
+- image preprocessing  
+- data augmentation  
+- CNN model development  
+- training and validation  
+- evaluation on a held-out test set  
+- Grad-CAM model interpretability  
+- sample predictions  
 
-Building a CNN using TensorFlow/Keras
+This project is part of my **Applied Scientist Portfolio**.
 
-Model training + validation analysis
+---
 
-Performance evaluation (confusion matrix, classification report)
+## 📂 Project Structure
 
-Grad-CAM interpretability
-
-Sample predictions
-
-Clear project structure for reproducibility
-
-This project is part of my Applied Scientist Portfolio.
-
-📂 Project Structure
+```bash
 03-cnn-rps/
 │
 ├── data/                # Train / valid / test folders
 ├── models/              # Saved model (.keras)
-├── visualizations/      # Training curves, Grad-CAM, sample predictions
-├── 03-cnn-rps.ipynb     # Full notebook
+├── 03-cnn-rock-paper-scissors.ipynb     # Full notebook
 └── README.md            # (this file)
+```
 
-🧠 1. Problem Description
+## 🧠 1. Problem Description
 
-The goal is to classify images of human hands showing:
+The goal of this project is to classify hand gesture images into:
 
-✊ rock
+- ✊ **Rock**
+- ✋ **Paper**
+- ✌️ **Scissors**
 
-✋ paper
+The dataset contains images with:
 
-✌️ scissors
+- diverse skin tones  
+- different lighting environments  
+- various hand positions  
+- multiple backgrounds  
 
-The dataset includes multiple skin tones, lighting conditions, backgrounds, and hand orientations — making it a realistic vision classification problem.
+This makes the classification task realistic and suitable for testing generalization.
 
-🧹 2. Dataset & Preprocessing
+---
 
-Dataset used: Rock–Paper–Scissors Hand Gestures (Roboflow version)
+## 🧹 2. Dataset & Preprocessing
 
-Split:
+**Dataset:** Rock–Paper–Scissors (Roboflow version)
 
-70% training
+- **Train:** 70%  
+- **Validation:** 20%  
+- **Test:** 10%  
+- **Image size:** 100×100  
+- **Scaling:** pixel values normalized to `[0, 1]`
 
-20% validation
+### 🌀 Data Augmentation
 
-10% test
-
-Images resized to 100×100
-
-Pixel values normalized to [0, 1]
-
-Data augmentation:
+```python
 rotation_range=20
 width_shift_range=0.1
 height_shift_range=0.1
 zoom_range=0.1
 horizontal_flip=True
-
-
+fill_mode="nearest"
+```
 This increases robustness and prevents overfitting.
 
-🧱 3. Model Architecture (CNN)
+---
 
-The model is built using the Functional API:
+## 🧱 3. CNN Model Architecture
+
+The model is built using the **TensorFlow Functional API**, with the following structure:
 
 Input (100x100x3)
 │
@@ -81,120 +84,120 @@ Input (100x100x3)
 └── Dense(3, softmax)
 
 
-Loss: categorical_crossentropy
-Optimizer: Adam
-Metrics: accuracy
 
-📈 4. Training Curves
+### 🔧 Training Setup
 
-Training & validation accuracy/loss plots:
+- **Loss:** `categorical_crossentropy`  
+- **Optimizer:** `Adam`  
+- **Metrics:** `accuracy`  
+- **Callbacks:**  
+  - `EarlyStopping`  
+  - `ModelCheckpoint`  
 
-(Insert your Loss/Accuracy curves here — saved from notebook)
+---
 
-These curves show:
+## 📈 4. Training Curves
 
-Smooth convergence
+Below are the training and validation accuracy/loss plots:
 
-No overfitting
+*(Insert accuracy/loss plots here)*
 
-Validation accuracy stabilizing around 97–99%
+### ✔ Observations
 
-🧪 5. Evaluation on Test Set
-✔ Confusion Matrix
+- Smooth and stable convergence  
+- No overfitting (both curves follow each other closely)  
+- Validation accuracy stabilizes around **97–99%**  
+- Excellent generalization to unseen data  
 
-(Insert your confusion matrix image here)
+---
 
-The model correctly predicted every single test sample:
+## 🧪 5. Evaluation on Test Set
 
-Paper: 30/30
+### ✔ Confusion Matrix
 
-Rock: 28/28
+*(Insert confusion matrix image here)*
 
-Scissors: 33/33
+All classes were predicted **perfectly**:
 
-✔ Classification Report
-Class	Precision	Recall	F1
-paper	1.00	1.00	1.00
-rock	1.00	1.00	1.00
-scissors	1.00	1.00	1.00
+- **Paper:** 30 / 30  
+- **Rock:** 28 / 28  
+- **Scissors:** 33 / 33  
 
-➡️ Overall accuracy: 100%
+### ✔ Classification Report
 
-The classes are visually distinct, so the CNN learns them extremely well.
+| Class     | Precision | Recall | F1-score |
+|-----------|-----------|--------|----------|
+| paper     | 1.00      | 1.00   | 1.00     |
+| rock      | 1.00      | 1.00   | 1.00     |
+| scissors  | 1.00      | 1.00   | 1.00     |
 
-🔍 6. Grad-CAM Interpretability
+➡️ **Overall Accuracy: 100%**
 
-Grad-CAM visualizations show which image regions influence model decisions.
+This level of performance is expected because the classes are visually distinct and the CNN is well-trained.
 
-(Insert your Grad-CAM output here — Original / Heatmap / Overlay)
+---
 
-The model focuses on:
+## 🔍 6. Grad-CAM Visualization
 
-finger outlines
+Grad-CAM highlights which areas of the image the model considers most important for classification.
 
-gesture shape
+*(Insert Original → Heatmap → Overlay images)*
 
-hand silhouette
+### ✔ Insights
 
-— and ignores background, confirming correct feature learning.
+The heatmaps show that the model focuses on:
 
-🖼️ 7. Sample Predictions
+- finger contours  
+- gesture shape  
+- hand silhouette  
 
-(Insert your 6-image prediction grid)
+It ignores the background — confirming that the CNN learned **true gesture-based features**, not color or noise.
 
-The model generalizes across:
+---
 
-different skin tones
+## 🖼️ 7. Sample Predictions
 
-different lighting
+Below are random predictions generated on unseen test images:
 
-different hand shapes
+*(Insert 6-image prediction grid)*
 
-background variations
+### ✔ Generalization Behavior
 
-All predictions are correct.
+The model performs correctly across:
 
-📝 8. Final Conclusions
+- different skin tones  
+- different lighting  
+- different backgrounds  
+- different hand angles  
 
-CNN achieves state-of-the-art accuracy on the RPS dataset
+This demonstrates strong robustness and discriminative power.
 
-Excellent generalization — no class confusion
+---
 
-Grad-CAM shows meaningful attention to gesture shape
+## 📝 8. Final Conclusions
 
-This project demonstrates essential Applied Scientist skills:
+- The CNN achieves **perfect test-set accuracy** on this dataset.  
+- Training is stable with no signs of overfitting.  
+- Model interpretability via Grad-CAM confirms correct behavior.  
+- This project demonstrates key **Applied Scientist skills**, including:
+  - computer vision preprocessing  
+  - data augmentation  
+  - CNN architecture design  
+  - evaluation techniques  
+  - interpretability for deep learning models  
 
-image preprocessing
+---
 
-augmentation
-
-CNN architecture
-
-training procedure
-
-evaluation
-
-model interpretability
-
-🛠️ 9. Reproduce the Project
+## 🛠️ 9. Reproduce This Project
 
 Clone the portfolio:
 
+```bash
 git clone https://github.com/JulijanaMilosavljevic/Applied-Scientist-Portfolio
-cd Applied-Scientist-Portfolio/03-cnn-rps
-
-
-Install requirements:
-
-pip install -r requirements.txt
-
+cd Applied-Scientist-Portfolio/03-cnn-rock-paper-scissors
+```
 
 Run notebook:
-
-jupyter notebook 03-cnn-rps.ipynb
-
-📬 Contact
-
-GitHub: https://github.com/JulijanaMilos
-
-LinkedIn: (insert if you want)
+```
+jupyter notebook 03-cnn-rock-paper-scissors.ipynb
+```
