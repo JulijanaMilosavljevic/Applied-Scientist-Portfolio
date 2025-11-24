@@ -199,5 +199,6 @@ cd Applied-Scientist-Portfolio/03-cnn-rock-paper-scissors
 
 Run notebook:
 ```
+pip install -r requirements.txt
 jupyter notebook 03-cnn-rock-paper-scissors.ipynb
 ```
