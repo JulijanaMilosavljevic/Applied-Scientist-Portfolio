@@ -215,5 +215,6 @@ cd Applied-Scientist-Portfolio/02-house-regression
 Run the notebook:
 ```bash
 jupyter notebook 02-house-regression.ipynb
+pip install -r requirements.txt
 ```
 
