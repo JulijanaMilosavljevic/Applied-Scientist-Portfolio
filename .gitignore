@@ -1,0 +1,3 @@
+05-bert-sentiment/data/*.csv
+05-bert-sentiment/model/*.safetensors
+05-bert-sentiment/model/*.bin
