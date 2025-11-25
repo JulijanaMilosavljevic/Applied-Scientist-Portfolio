@@ -1,3 +1,11 @@
+# Ignore large sentiment dataset
 05-bert-sentiment/data/*.csv
-05-bert-sentiment/model/*.safetensors
+
+# Ignore trained model weights
 05-bert-sentiment/model/*.bin
+05-bert-sentiment/model/*.safetensors
+05-bert-sentiment/model/*.pt
+
+# Ignore temporary files
+*.pkl
+*.pickle
