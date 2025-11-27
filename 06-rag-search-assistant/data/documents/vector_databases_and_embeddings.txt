@@ -1,0 +1,7 @@
+Vector embeddings represent text, images, or other data as dense numerical vectors that encode semantic meaning. Embeddings allow similarity search, clustering, recommendation systems, and retrieval augmented generation (RAG).
+
+Sentence Transformers and models like all-MiniLM-L6-v2 produce high-quality sentence-level embeddings. The cosine similarity between embedding vectors is often used to measure semantic closeness.
+
+Vector databases such as FAISS, Pinecone, Weaviate, and Milvus efficiently store and search high-dimensional vectors. FAISS, developed by Meta AI, supports fast approximate nearest neighbor (ANN) search, which scales to millions of vectors.
+
+In RAG pipelines, embeddings are generated for document chunks. During a query, the user's question is embedded using the same model, then a similarity search retrieves relevant documents, which are passed to a language model as additional context.

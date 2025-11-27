@@ -1,0 +1,10 @@
+Machine Learning (ML) is a subfield of artificial intelligence focused on developing systems that learn patterns from data. 
+The typical ML workflow consists of data preprocessing, feature engineering, model selection, training, evaluation, and deployment.
+
+Supervised learning is used when labeled data is available. The most common algorithms include linear regression, logistic regression, support vector machines, decision trees, random forests, gradient boosting models, and neural networks.
+
+Unsupervised learning does not use labels. Clustering (k-means, DBSCAN) and dimensionality reduction (PCA, UMAP, t-SNE) are often applied to find structure in data.
+
+Model evaluation requires metrics appropriate for the task. For classification, accuracy, precision, recall, F1-score, ROC-AUC, and confusion matrices are essential. For regression, MSE, MAE, and R² are standard.
+
+Overfitting is a key challenge and can be reduced using regularization, dropout, early stopping, and more training data. Generalization is the primary goal of ML models.

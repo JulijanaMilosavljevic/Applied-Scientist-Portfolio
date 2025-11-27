@@ -1,0 +1,31 @@
+# Ignore model weights, tokenizers, checkpoints
+models/
+*.bin
+*.pt
+*.ckpt
+
+# Ignore FAISS index
+index/
+index/faiss_store/
+*.index
+
+# Ignore datasets cache
+cache/
+__pycache__/
+
+# Ignore Gradio temporary files
+gradio_temp/
+*.log
+
+# Ignore environment files
+venv/
+.env
+
+# Ignore Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Ignore any large artifacts
+*.npy
+*.npz
+*.pkl
+*.h5

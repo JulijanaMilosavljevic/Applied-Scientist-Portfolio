@@ -1,0 +1,7 @@
+Retrieval-Augmented Generation (RAG) is an AI architecture where a language model is combined with an external knowledge source. Instead of relying solely on pretrained parameters, RAG retrieves relevant information from a vector database and uses it to generate more accurate and grounded answers.
+
+The RAG workflow consists of four stages: document ingestion, chunking, embedding generation, and retrieval during inference. Chunking splits large documents into smaller segments to improve embedding quality.
+
+At inference time, the user query is embedded and compared to stored vectors to fetch the most relevant chunks. These chunks are appended to the prompt and passed to a generative model such as FLAN-T5, Llama, or GPT models.
+
+RAG significantly reduces hallucination, improves factual accuracy, and enables domain-specific question answering. It is widely used in enterprise search systems, chatbots, document assistants, and internal knowledge bases.

@@ -1,0 +1,7 @@
+Natural Language Processing (NLP) is the area of machine learning focused on understanding and generating human language. Classical NLP relied on statistical methods such as n-grams, TF-IDF, and bag-of-words representations.
+
+Deep learning transformed NLP through word embeddings (Word2Vec, GloVe, FastText), recurrent neural networks (RNNs), LSTMs, and attention mechanisms. The introduction of the Transformer architecture replaced recurrence entirely and enabled parallel training over entire sequences.
+
+Modern NLP is dominated by large pretrained language models such as BERT, RoBERTa, DistilBERT, GPT, and T5. These models are pretrained on massive corpora and fine-tuned on downstream tasks like sentiment analysis, question answering, summarization, and named entity recognition.
+
+Tokenization is a critical preprocessing step. Subword tokenizers like WordPiece and SentencePiece reduce vocabulary size while handling rare words efficiently. Transformer models use self-attention layers to capture long-range dependencies within text.
