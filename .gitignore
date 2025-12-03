@@ -1,0 +1,65 @@
+# ===============================
+# DATASETS
+# ===============================
+data/
+*/data/
+*.csv
+*.xlsx
+*.parquet
+*.json
+
+# ===============================
+# MODELS
+# ===============================
+models/
+*/models/
+*.pkl
+*.joblib
+*.pt
+*.bin
+*.onnx
+
+# ===============================
+# CHECKPOINTS / TRAINING OUTPUT
+# ===============================
+checkpoints/
+*/checkpoints/
+runs/
+*/runs/
+results/
+*/results/
+logs/
+*/logs/
+
+# ===============================
+# FAISS / EMBEDDING FILES
+# ===============================
+*.faiss
+*.pkl
+index.faiss
+index.pkl
+
+# ===============================
+# PYTHON CACHE / TEMP
+# ===============================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.tmp
+
+# ===============================
+# NOTEBOOK CHECKPOINTS
+# ===============================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ===============================
+# ENVIRONMENTS
+# ===============================
+.env
+*.env
+venv/
+.venv/
+
+# =======

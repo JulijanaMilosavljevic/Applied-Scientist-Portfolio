@@ -1,0 +1,5 @@
+# Do not upload model checkpoints
+emotion-bert-results/
+models/
+*.bin
+*.pt
